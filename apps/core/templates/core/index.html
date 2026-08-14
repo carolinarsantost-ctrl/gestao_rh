@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="row">
+    <div class="col-sm">
+        um
+    </div>
+    <div class="col-sm">
+        Olá {{ usuario.funcionario.nome }}
+        <a href="{% url 'list_funcionarios' %}">Gerenciar funcionarios</a>
+        <a href="{% url 'list_departamentos' %}">Gerenciar departamentos</a>
+    </div>
+    <div class="col-sm">
+        <form method="post" action="{% url 'logout' %}" class="d-line">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-link p-0">Logout</button>
+        </form>
+
+        {% if usuario.funcionario.empresa %}
+            <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">Editar empresa</a>
+        {% else %}
+        <a href="{% url 'create_empresa' %}"> Criar empresa</a>
+
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

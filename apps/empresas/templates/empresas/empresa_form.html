@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button type="submit">Salvar</button>
+</form>
+{% endblock %}

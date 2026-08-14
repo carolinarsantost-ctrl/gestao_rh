@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block main %}
+
+{{ form.errors }}
+<br>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% bootstrap_form form %}
+
+    <button type="submit" class="btn btn-outline-secondary">Adicionar</button>
+</form>
+{% endblock%}
