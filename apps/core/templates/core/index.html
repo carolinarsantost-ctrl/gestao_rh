@@ -9,6 +9,7 @@
         Olá {{ usuario.funcionario.nome }}
         <a href="{% url 'list_funcionarios' %}">Gerenciar funcionarios</a>
         <a href="{% url 'list_departamentos' %}">Gerenciar departamentos</a>
+        <a href="{% url 'list_hora_extra' %}">Gerenciar Banco de horas</a>
     </div>
     <div class="col-sm">
         <form method="post" action="{% url 'logout' %}" class="d-line">
