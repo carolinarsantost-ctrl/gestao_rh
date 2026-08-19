@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block main %}
+
+<form method="post">
+    {% csrf_token %}
+
+    {% bootstrap_form form %}
+
+    <button type="submit" class="btn btn-outline-secondary">Salvar</button>
+
+    {% if object %}
+    <a href="{% url 'delete_hora_extra' object.id %}" class="btn btn-outline-danger">
+        Deletar
+    </a>
+    {% endif %}
+
+    <a href="{% url 'list_hora_extra'%}" class="btn btn-outline-secondary">
+        Voltar
+    </a>
+</form>
+
+<br>
+
+{% endblock%}

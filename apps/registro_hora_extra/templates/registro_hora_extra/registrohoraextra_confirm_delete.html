@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<h2> Removendo registro de Hora Extra </h2>
+<form method="post">
+    {% csrf_token %}
+    <br>
+    <h3>Você esta certo que quer deletar {{ object }}?</h3>
+    {{ form }}
+
+    <button type="submit" class="btn btn-outline-danger">Confirmar</button>
+    
+    <a href="{% url 'update_hora_extra' object.id %}" class="btn btn-outline-secondary">
+        Cancelar
+    </a>
+</form>
+{% endblock %}
